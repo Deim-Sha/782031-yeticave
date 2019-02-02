@@ -1,7 +1,48 @@
 <?php
 $is_auth = rand(0, 1);
 
-$user_name = 'Екатерина'; // укажите здесь ваше имя
+$user_name = 'Екатерина';
+
+$categories = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
+
+$lots = [
+    [
+        'name' => '2014 Rossignol District Snowboard',
+        'category' => 'Доски и лыжи',
+        'price' => '10999',
+        'img' => 'img/lot-1.jpg'
+    ],
+    [
+        'name' => 'DC Ply Mens 2016/2017 Snowboard',
+        'category' => 'Доски и лыжи',
+        'price' => '159999',
+        'img' => 'img/lot-2.jpg'
+    ],
+    [
+        'name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
+        'category' => 'Крепления',
+        'price' => '8000',
+        'img' => 'img/lot-3.jpg'
+    ],
+    [
+        'name' => 'Ботинки для сноуборда DC Mutiny Charocal',
+        'category' => 'Ботинки',
+        'price' => '10999',
+        'img' => 'img/lot-4.jpg'
+    ],
+    [
+        'name' => 'Куртка для сноуборда DC Mutiny Charocal',
+        'category' => 'Одежда',
+        'price' => '7500',
+        'img' => 'img/lot-5.jpg'
+    ],
+    [
+        'name' => 'Маска Oakley Canopy',
+        'category' => 'Разное',
+        'price' => '5400',
+        'img' => 'img/lot-6.jpg'
+    ]
+];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -27,11 +68,11 @@ $user_name = 'Екатерина'; // укажите здесь ваше имя
         <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
 
         <nav class="user-menu">
-        <?php if ($is_auth == 1): ?>
+            <?php if ($is_auth == 1): ?>
             <div class="user-menu__logged">
                 <p><?=$user_name;?></p>
             </div>
-        <?php else: ?>
+            <?php else: ?>
             <ul class="user-menu__list">
                 <li class="user-menu__item">
                     <a href="#">Регистрация</a>
@@ -40,7 +81,7 @@ $user_name = 'Екатерина'; // укажите здесь ваше имя
                     <a href="#">Вход</a>
                 </li>
             </ul>
-        <?php endif; ?>
+            <?php endif; ?>
         </nav>
     </div>
 </header>
