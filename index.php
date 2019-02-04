@@ -68,7 +68,7 @@ $lots = [
         <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
 
         <nav class="user-menu">
-            <?php if ($is_auth == 1): ?>
+            <?php if ($is_auth === 1) : ?>
             <div class="user-menu__logged">
                 <p><?=$user_name;?></p>
             </div>
@@ -91,7 +91,7 @@ $lots = [
         <h2 class="promo__title">Нужен стафф для катки?</h2>
         <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
         <ul class="promo__list">
-            <?php foreach ($categories as $key => $value): ?>
+            <?php foreach ($categories as $key => $value) : ?>
             <li class="promo__item promo__item--boards">
                 <a class="promo__link" href="pages/all-lots.html"><?=$value;?></a>
             </li>
@@ -103,7 +103,7 @@ $lots = [
             <h2>Открытые лоты</h2>
         </div>
         <ul class="lots__list">
-            <?php foreach ($lots as $key => $value): ?>
+            <?php foreach ($lots as $key => $value) : ?>
             <li class="lots__item lot">
                 <div class="lot__image">
                     <img src="<?=$value['img'];?>" width="350" height="260" alt="">
@@ -131,7 +131,7 @@ $lots = [
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <?php foreach ($categories as $key => $value): ?>
+            <?php foreach ($categories as $key => $value) : ?>
             <li class="nav__item">
                 <a href="pages/all-lots.html"><?=$value;?></a>
             </li>
