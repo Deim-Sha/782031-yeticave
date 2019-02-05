@@ -43,6 +43,15 @@ $lots = [
         'img' => 'img/lot-6.jpg'
     ]
 ];
+
+function formatPrice($price)
+{
+    $price_int = ceil($price);
+    if ($price_int <= 1000) {
+        return $price_int . " &#8381";
+    }
+    return number_format($price_int, 0, null, ' ') . " &#8381";
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -114,7 +123,7 @@ $lots = [
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$lot['price'];?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=formatPrice($lot['price']);?></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
