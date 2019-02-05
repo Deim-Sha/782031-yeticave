@@ -50,7 +50,7 @@ function formatPrice($price)
     if ($price_int <= 1000) {
         return $price_int . " &#8381";
     }
-    return number_format($price_int, 0, '', ' ') . " &#8381";
+    return number_format($price_int, 0, null, ' ') . " &#8381";
 }
 ?>
 <!DOCTYPE html>
