@@ -28,7 +28,7 @@
                             <span class="lot__cost"><?=formatPrice(strip_tags($lot['price']));?></span>
                         </div>
                         <div class="lot__timer timer">
-                            12:23
+                            <?=createTimer();?>
                         </div>
                     </div>
                 </div>

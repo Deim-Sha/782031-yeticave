@@ -43,15 +43,6 @@ $lots = [
     ]
 ];
 
-function formatPrice($price)
-{
-    $price_int = ceil($price);
-    if ($price_int <= 1000) {
-        return $price_int . " &#8381";
-    }
-    return number_format($price_int, 0, null, ' ') . " &#8381";
-}
-
 $content = include_template('index.php', [
     'categories' => $categories,
     'lots' => $lots
