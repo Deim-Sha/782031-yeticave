@@ -27,7 +27,6 @@ function formatPrice($price)
 
 function createTimer()
 {
-    date_default_timezone_set("Europe/Moscow");
     $time_now = date_create("now");
     $time_end = date_create("tomorrow");
     $time_diff = date_diff($time_end, $time_now);
