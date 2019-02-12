@@ -18,18 +18,26 @@ CREATE TABLE lots (
   price INT NOT NULL,
   time_end TIMESTAMP NOT NULL,
   step INT NOT NULL,
-  creator_id INT,
+  creator_id INT NOT NULL,
   winner_id INT,
-  category_id INT
+  category_id INT NOT NULL
 );
+CREATE INDEX time_add_idx ON lots(time_add);
+CREATE INDEX name_idx ON lots(name);
+CREATE INDEX creator_id_idx ON lots(creator_id);
+CREATE INDEX winner_id_idx ON lots(winner_id);
+CREATE INDEX category_id_idx ON lots(category_id);
 
 CREATE TABLE rates (
   id INT AUTO_INCREMENT PRIMARY KEY,
   time_add TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   price INT NOT NULL,
-  user_id INT,
-  lot_id INT
+  user_id INT NOT NULL,
+  lot_id INT NOT NULL
 );
+CREATE INDEX time_add_idx ON rates(time_add);
+CREATE INDEX user_id_idx ON rates(user_id);
+CREATE INDEX lot_id_idx ON rates(lot_id);
 
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -38,7 +46,5 @@ CREATE TABLE users (
   name VARCHAR(64) NOT NULL,
   password VARCHAR(16) NOT NULL,
   avatar VARCHAR(64),
-  contacts VARCHAR(256) NOT NULL,
-  lot_id INT,
-  rate_id INT
+  contacts VARCHAR(256) NOT NULL
 );
