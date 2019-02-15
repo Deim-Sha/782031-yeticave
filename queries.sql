@@ -31,18 +31,19 @@ SELECT *
 FROM categories;
 
 -- получает самые новые открытые лоты. Каждый лот включает название, стартовую цену, ссылку на изображение, цену, название категории
-SELECT l.name AS lot, l.price AS start_price, img, r.price AS price, c.name AS category
+SELECT l.id, l.name AS lot, l.price AS start_price, img, r.price AS price, c.name AS category
 FROM lots l
   JOIN rates r
   ON l.id = r.lot_id
   JOIN categories c
   ON l.category_id = c.id
 WHERE l.winner_id IS NULL
+GROUP BY l.id
 ORDER BY l.create_time DESC
 LIMIT 5;
 
 -- показывает лот по его id и название категории, к которой принадлежит лот
-SELECT l.name AS lot, c.name AS category
+SELECT l.id, l.name AS lot, c.name AS category
 FROM lots l
   JOIN categories c
   ON l.category_id = c.id
