@@ -3,8 +3,8 @@
 return [
     'db' => [
         'host' => 'localhost',
-        'user' => 'root',
+        'user' => '',
         'password' => '',
-        'database' => 'yeticave'
+        'database' => ''
     ]
 ];

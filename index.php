@@ -2,12 +2,12 @@
 date_default_timezone_set("Europe/Moscow");
 
 require_once 'functions.php';
-require_once 'config.php';
+$config = require 'config.php';
 
 $is_auth = rand(0, 1);
 $user_name = 'Екатерина';
 
-$link = setDbConnection($db);
+$link = setDbConnection($config['db']);
 $categories = getCategories($link);
 $lots = getLots($link);
 
